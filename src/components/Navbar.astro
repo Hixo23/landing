@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 const items = [
     {
         name: "Projects",
@@ -11,8 +13,9 @@ const items = [
 ]
 ---
 
-<header class="w-screen h-24 flex items-center px-6 justify-between text-white font-poppins">
-    <nav class="flex gap-6">
+<header class="fixed top-0 w-screen h-16 flex items-center px-6  text-white font-poppins">
+    <nav class="flex gap-6 items-center w-full">
         {items.map((item) => <a class="hover:text-gray-300 duration-100 transition-all" href={item.href}>{item.name}</a>)}
     </nav>
-</header>
+        <Icon color="white" size={34} name="mdi:github" />
+    </header>
