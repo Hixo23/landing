@@ -1,0 +1,45 @@
+---
+    const { image, title, technologies, description, demo, repositories } = Astro.props
+---
+
+ <div class="flex lg:px-24 mb-24 flex-col items-center gap-6  text-white xl:flex-row xl:gap-12">
+      <img
+        src={image}
+        class="lg:h-1/2 lg:w-1/2 "
+        alt=""
+
+      />
+      <div class="flex flex-col items-center gap-6 p-4 md:p-0">
+        <p class="text-2xl font-bold lg:text-5xl">{title}</p>
+        <ul class="flex flex-wrap justify-center gap-6 md:flex-row">
+          {technologies.map((technology: string) => {
+            return (
+              <li
+                class=" flex flex-col flex-wrap items-center justify-center rounded-lg bg-[#8148c2] min-w-24 h-12 text-nowrap font-semibold md:flex-row lg:px-4 "
+              >
+                {technology}
+              </li>
+            );
+          })}
+        </ul>
+        <p class="text-center">{description}</p>
+        <div class="flex items-center gap-6">
+          <ul class="flex gap-6">
+            {repositories.map((repositorium: { url: string, name: string}) => {
+              return (
+                <li class="bg-[#a85bff] px-4 py-2 rounded-lg">
+                  <a href={repositorium.url}>
+                    Repozytorium
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          {demo && (
+            <a class="rounded-lg border-2 border-white px-4 py-2" href={demo}>
+              Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </div>

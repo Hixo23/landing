@@ -1,0 +1,11 @@
+---
+import { Projects as ProjectsData } from "../../data/projects";
+import Project from "../Project.astro";
+---
+
+<section class=" h-screen flex items-center flex-col gap-y-24 lg:gap-y-32" id="projects">
+    <p class="tracking-widest text-white text-5xl text-center font-semibold">PROJECTS</p>
+    <ul>
+        {ProjectsData.map((project) => <Project title={project.title}, technologies={project.technologies} description={project.description} demo={project.demo}, repositories={project.repositories} image={project.image} />)}
+    </ul>
+</section>

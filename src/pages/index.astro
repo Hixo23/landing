@@ -2,14 +2,16 @@
 import Background from '../components/Background.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/sections/hero.astro';
+import Projects from '../components/sections/projects.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<Navbar />
 	<Background>
-		<main >
-			<Hero />	
+	<main class="flex flex-col gap-4 font-poppins">
+			<Hero />
+			<Projects />	
 		</main>
 	</Background>
 </Layout>
